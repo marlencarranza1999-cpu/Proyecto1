@@ -1,0 +1,192 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    --primary: #1d4ed8;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --white: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+}
+
+/* --- LOGIN & REGISTRO --- */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card-auth {
+    background: var(--white);
+    color: var(--text-dark);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    width: 350px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-auth h2 { margin-bottom: 1.5rem; font-weight: 700; }
+
+.input-group { text-align: left; margin-bottom: 1rem; }
+.input-group label { display: block; font-size: 0.9rem; margin-bottom: 5px; color: var(--text-muted); }
+
+
+.input-group input {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #e2e8f0;
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    font-size: 1rem;
+    background-color: #f8fafc;
+    color: var(--text-dark);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+}
+
+/* --- DASHBOARD PRINCIPAL --- */
+header {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--primary);
+}
+
+.grid-candidatos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 3rem 8%;
+}
+
+.card-cand {
+    background: var(--white);
+    color: var(--text-dark);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-cand img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover; 
+    background-color: #f8fafc;
+}
+
+.cand-info { padding: 1.5rem; }
+
+/* --- BOTONES --- */
+.btn {
+    border: none; padding: 12px 20px; border-radius: 8px;
+    font-weight: 700; cursor: pointer; transition: 0.2s; width: 100%;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-logout { background: var(--danger); color: white; padding: 8px 20px; border-radius: 50px; cursor: pointer; border: none; }
+
+/* PANEL ADMIN */
+.admin-section { background: rgba(255, 255, 255, 0.05); margin: 2rem 5%; padding: 2rem; border-radius: 20px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.stat-box { padding: 1rem; border-radius: 10px; text-align: center; }
+.blue { background: #2563eb; } .green { background: #16a34a; } .red { background: #dc2626; }
+
+
+.card-auth {
+    
+    padding: 2.5rem !important;
+    border-radius: 20px !important;
+    color: #1e293b !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Limpia los grupos de input para que no tengan fondo propio */
+.card-auth .input-group {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100%;
+    margin-bottom: 1.2rem;
+}
+
+.card-auth label {
+    color: #64748b !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    display: block;
+}
+
+.card-auth input {
+    width: 100% !important;
+    background: #f8fafc !important; /* Gris suave */
+    color: #1e293b !important;     /* Texto oscuro */
+    border: 1px solid #e2e8f0 !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box;
+}
+
+.card-auth input:focus {
+    border-color: #1d4ed8 !important;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1) !important;
+    outline: none;
+}
+/* FONDO CON LOGO CENTRADO */
+body.flex-center {
+    position: relative;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    overflow: hidden;
+}
+
+/* Logo gigante tipo marca de agua */
+body.flex-center::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px; /* tamaño del logo */
+    height: 600px;
+    background: url('img/logo.png') no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    opacity: 0.08; /* clave: transparencia */
+    z-index: 0;
+}
+
+/* Asegura que el login quede encima */
+.card-auth {
+    position: relative;
+    z-index: 2;
+
+}
+
+.card-auth {
+    background-image: url('img/logo.png');
+    background-size: cover;      /* Ajusta la imagen para cubrir todo el div */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;
+}
+

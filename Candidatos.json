@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Roberto Martinez Paz",
+        "partido": "Trabajando por el País",
+        "votos": 0,
+        "img": "img/roberto.png",
+        "color": "#1d4ed8"
+    },
+    {
+        "id": 2,
+        "nombre": "Isabella Pérez Mendoza",
+        "partido": "Evolución Nacional",
+        "votos": 0,
+        "img": "img/isabella.png",
+        "color": "#dc2626"
+    },
+    {
+        "id": 3,
+        "nombre": "Sebastián Rodríguez Gómez",
+        "partido": "Equilibrio Nacional",
+        "votos": 0,
+        "img": "img/sebastian.png",
+        "color": "#16a34a"
+    }
+]

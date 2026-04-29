@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Electoral</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⚖️ Sistema de Votaciones Presidenciales</div>
+        <div class="user-nav">
+            <span>Hola, <span id="nombre-usuario"></span></span> 
+            <button onclick="cerrarSesion()" class="btn-logout">Cerrar sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <h2 style="text-align:center; margin-top:3rem;">Selecciona tu voto:</h2>
+        <div id="grid-candidatos" class="grid-candidatos"></div>
+
+        <section id="admin-section" class="admin-section" style="display:none">
+            <h2 style="text-align:center;">Panel de Administración</h2>
+
+            <div class="stats-grid">
+                <div class="stat-box blue">
+                    Votos Totales <br>
+                    <strong id="total-votos">0</strong>
+                </div>
+            </div>
+
+            <h3>Distribución de Votos</h3>
+            <div id="barras-container"></div>
+
+            <h3>Historial</h3>
+            <table>
+                <thead>
+                    <tr><th>Nombre</th><th>Fecha</th></tr>
+                </thead>
+                <tbody id="tabla-body"></tbody>
+            </table>
+
+            <button onclick="resetDatos()" class="btn btn-danger">Reset Datos</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
